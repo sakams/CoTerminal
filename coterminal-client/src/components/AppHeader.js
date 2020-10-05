@@ -4,6 +4,7 @@ import { withStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
+import Button from '@material-ui/core/Button';
 
 const styles = {
   root: {
@@ -17,11 +18,24 @@ function SimpleAppBar(props) {
   return (
     <div className={classes.root}>
       <AppBar position="static" color="default">
+      
         <Toolbar>
           <Typography variant="h6" color="inherit">
             CoTerminal
           </Typography>
+          
+          <Button
+            type="submit"
+            alignItems = 'center-r'
+            variant=""
+            color="inherit"
+            className={classes.submit}
+          >
+            Sign Up
+          </Button>
+         
         </Toolbar>
+
       </AppBar>
     </div>
   );
