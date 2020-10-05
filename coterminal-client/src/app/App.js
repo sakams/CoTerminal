@@ -1,7 +1,6 @@
 import React,{ Component } from 'react';
 import './App.css';
 
-//import { Row, Col } from 'antd';
 import {
   Route,
   withRouter,
@@ -10,6 +9,7 @@ import {
 
 
 import AppHeader from '../components/AppHeader';
+import Login from '../components/Login';
 
 class App extends Component {
 
@@ -18,7 +18,10 @@ class App extends Component {
       <div className="app-container">
         <AppHeader position="static" color="default">
         </AppHeader>
-        
+
+        <Login position="static" color="default">
+        </Login>
+
       </div>
     );
   }
