@@ -1,48 +1,41 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
+import IconButton from '@material-ui/core/IconButton';
+import MenuIcon from '@material-ui/icons/Menu';
+import{Link}from 'react-router-dom';
 
-const styles = {
-  root: {
-    flexGrow: 1,
-  },
-};
+const useStyles = makeStyles((theme) => ({
+    root: {
+      flexGrow: 1,
+    },
+    
+    button:{
+      
+        marginRight: theme.spacing(1),
+    },
+    title: {
+      flexGrow: 1,
+    },
+    
+  }));
 
-function SimpleAppBar(props) {
-  const { classes } = props;
+export default function ButtonAppBar() {
+  const classes = useStyles();
 
   return (
     <div className={classes.root}>
-      <AppBar position="static" color="default">
-      
-        <Toolbar>
-          <Typography variant="h6" color="inherit">
+      <AppBar style={{background: '#455a64'}} position="static">
+        <Toolbar variant="dense">
+          <Typography variant="h6" className={classes.title}>
             CoTerminal
           </Typography>
-          
-          <Button
-            type="submit"
-            alignItems = 'center-r'
-            variant=""
-            color="inherit"
-            className={classes.submit}
-          >
-            Sign Up
-          </Button>
-         
+          <Button component={Link}to="/SignUp" color="inherit">Sign Up</Button>
         </Toolbar>
-
       </AppBar>
     </div>
   );
 }
-
-SimpleAppBar.propTypes = {
-  classes: PropTypes.object.isRequired,
-};
-
-export default withStyles(styles)(SimpleAppBar);
