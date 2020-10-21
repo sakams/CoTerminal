@@ -23,6 +23,10 @@ const styles = {
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'center',
+      
+       
+
+      transform: 'translate(0%, +50%)'
     },
     avatar: {
      
@@ -35,6 +39,8 @@ const styles = {
     submit: {
    
     },
+
+   
 };
 
 
